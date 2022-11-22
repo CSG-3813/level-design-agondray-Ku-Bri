@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class DoorSwing : MonoBehaviour
 {
-
-    public Animator doorSwing;
+    public string animationParameter;
+    Animator doorSwing;
+    AudioSource audioSrc;
+    AudioClip audioClp;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        doorSwing.enabled = false;
-        doorSwing.SetBool("Door OpeN", false);
+        doorSwing = GetComponent<Animator>();
+        Debug.Log(doorSwing);
+        audioSrc = GetComponent<AudioSource>();
+        Debug.Log(audioSrc);
+        audioClp = GetComponent<AudioClip>();
+        Debug.Log(audioClp);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            doorSwing.SetBool("Door Open", true);
+            doorSwing.SetBool(animationParameter, true);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+
+   public void playHinge()
     {
-        
+        audioSrc.PlayOneShot(audioClp);
     }
 }

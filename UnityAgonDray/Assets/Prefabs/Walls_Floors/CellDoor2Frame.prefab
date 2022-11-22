@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3965607444480041454}
   - component: {fileID: 47130980404670027}
   - component: {fileID: 2829252503365704321}
+  - component: {fileID: 4520827826286116593}
+  - component: {fileID: 65960414998374689}
   m_Layer: 0
   m_Name: CellDoor2Frame
   m_TagString: Untagged
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4520827826286116593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342448989934779220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 0.5, z: 11.138133}
+  m_Center: {x: 3.71, y: 0, z: 5.5690665}
+--- !u!65 &65960414998374689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342448989934779220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 0.5, z: 11.138133}
+  m_Center: {x: -3.68, y: 0, z: 5.5690665}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7732389909952607742}
   - component: {fileID: -3855783266591058061}
   - component: {fileID: -1843446571313188748}
+  - component: {fileID: 3755944246143650599}
   m_Layer: 0
   m_Name: CellDoor2
   m_TagString: Untagged
@@ -110,4 +111,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0f85dacd5f52845a52fb4f71c6417b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorSwing: {fileID: 0}
+  animationParameter: 
+--- !u!65 &3755944246143650599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092418600643957803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.108721, y: 8.605247, z: 0.11430001}
+  m_Center: {x: -2.465158, y: 0.03490019, z: 0}
