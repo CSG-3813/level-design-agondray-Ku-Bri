@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DoorSwing : MonoBehaviour
 {
-    public string animationParameter;
-    Animator doorSwing;
+    
+    private Animator doorSwing;
     AudioSource audioSrc;
     AudioClip audioClp;
 
@@ -25,12 +25,18 @@ public class DoorSwing : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            doorSwing.SetBool(animationParameter, true);
+            doorSwing.SetBool("IsOpen", true);
         }
     }
 
 
-   public void playHinge()
+    private void OnTriggerExit(Collider other)
+    {
+        doorSwing.SetBool("IsOpen", false);
+    }
+
+
+    public void playHinge()
     {
         audioSrc.PlayOneShot(audioClp);
     }
