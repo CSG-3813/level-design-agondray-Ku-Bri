@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3237427335753851331}
   - component: {fileID: 6458216776707900455}
   - component: {fileID: 2882870112215981239}
+  - component: {fileID: 4843742582111628518}
   m_Layer: 0
   m_Name: MainDoor
   m_TagString: Untagged
@@ -123,7 +124,7 @@ BoxCollider:
   m_GameObject: {fileID: 5000811240810864651}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4, y: 3.7787538, z: 3.85}
   m_Center: {x: 0.977208, y: 0, z: 1.14}
@@ -147,3 +148,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &4843742582111628518
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000811240810864651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.35
+  m_Center: {x: 0.02, y: 0, z: 0.1}

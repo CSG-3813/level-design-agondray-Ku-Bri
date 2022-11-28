@@ -25,7 +25,7 @@ public class DoorSwing : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            //playHinge();
+            playHinge();
             doorSwing.SetBool("IsOpen", true);
         }
     }
@@ -35,7 +35,7 @@ public class DoorSwing : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //playHinge();
+            playHinge();
             doorSwing.SetBool("IsOpen", false);
         }
     }

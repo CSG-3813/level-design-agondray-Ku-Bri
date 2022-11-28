@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 1538267232292660332}
   - component: {fileID: -255411959608341392}
   - component: {fileID: 6203953673463650749}
-  - component: {fileID: 2902050904217194647}
   - component: {fileID: 4937855806895882360}
+  - component: {fileID: -1788216366604315348}
+  - component: {fileID: 4415732705364609206}
   m_Layer: 0
   m_Name: MainDoorReverse
   m_TagString: Untagged
@@ -131,22 +132,10 @@ BoxCollider:
   m_GameObject: {fileID: 5520107941676000894}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 6.58, y: 3.7787557, z: 5.21}
+  m_Size: {x: 5.19, y: 3.7787557, z: 3.98}
   m_Center: {x: 0.9772082, y: 0, z: 0.73}
---- !u!114 &2902050904217194647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5520107941676000894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340335215a379804aa5465c66102f0e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &4937855806895882360
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,3 +232,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1788216366604315348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520107941676000894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0f85dacd5f52845a52fb4f71c6417b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainDoor: {fileID: 8300000, guid: e05b5fde85b6593439fc72db7000e81b, type: 3}
+--- !u!135 &4415732705364609206
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520107941676000894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.35
+  m_Center: {x: 0.02, y: 0, z: 0.1}
