@@ -6,8 +6,8 @@ public class DoorSwingReverse : MonoBehaviour
 {
     public AudioClip MainDoor;
     private Animator doorSwingRev;
-    AudioSource audioSrc;
-    AudioClip audioClp;
+    //AudioSource audioSrc;
+    //AudioClip audioClp;
 
 
     // Start is called before the first frame update
@@ -15,18 +15,19 @@ public class DoorSwingReverse : MonoBehaviour
     {
         doorSwingRev = GetComponent<Animator>();
         Debug.Log(doorSwingRev);
-        audioSrc = GetComponent<AudioSource>();
-        Debug.Log(audioSrc);
-        audioClp = GetComponent<AudioClip>();
-        Debug.Log(audioClp);
+        //audioSrc = GetComponent<AudioSource>();
+        //Debug.Log(audioSrc);
+        //audioClp = GetComponent<AudioClip>();
+        //Debug.Log(audioClp);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            playHinge();
             doorSwingRev.SetBool("IsOpen", true);
-            AudioSource.PlayClipAtPoint(MainDoor, transform.position);
+            //AudioSource.PlayClipAtPoint(MainDoor, transform.position, 5);
         }
     }
 
@@ -35,14 +36,15 @@ public class DoorSwingReverse : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            playHinge();
             doorSwingRev.SetBool("IsOpen", false);
-            AudioSource.PlayClipAtPoint(MainDoor, transform.position);
+            //AudioSource.PlayClipAtPoint(MainDoor, transform.position, 5);
         }
     }
 
 
     public void playHinge()
     {
-        audioSrc.PlayOneShot(audioClp);
+        AudioSource.PlayClipAtPoint(MainDoor, transform.position, 35);
     }
 }

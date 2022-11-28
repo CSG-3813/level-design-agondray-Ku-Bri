@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DoorSwing : MonoBehaviour
 {
-    
+    public AudioClip MainDoor;
     private Animator doorSwing;
-    AudioSource audioSrc;
-    AudioClip audioClp;
+    //AudioSource audioSrc;
+    //AudioClip audioClp;
 
 
     // Start is called before the first frame update
@@ -15,16 +15,17 @@ public class DoorSwing : MonoBehaviour
     {
         doorSwing = GetComponent<Animator>();
         Debug.Log(doorSwing);
-        audioSrc = GetComponent<AudioSource>();
-        Debug.Log(audioSrc);
-        audioClp = GetComponent<AudioClip>();
-        Debug.Log(audioClp);
+        //audioSrc = GetComponent<AudioSource>();
+        //Debug.Log(audioSrc);
+        //audioClp = GetComponent<AudioClip>();
+        //Debug.Log(audioClp);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
+            //playHinge();
             doorSwing.SetBool("IsOpen", true);
         }
     }
@@ -34,6 +35,7 @@ public class DoorSwing : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //playHinge();
             doorSwing.SetBool("IsOpen", false);
         }
     }
@@ -41,6 +43,6 @@ public class DoorSwing : MonoBehaviour
 
     public void playHinge()
     {
-        audioSrc.PlayOneShot(audioClp);
+        AudioSource.PlayClipAtPoint(MainDoor, transform.position, 25);
     }
 }
