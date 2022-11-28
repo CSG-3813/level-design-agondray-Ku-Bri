@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 6208954483203393633}
   - component: {fileID: 8200584868811816107}
   - component: {fileID: 5239590620671379093}
+  - component: {fileID: 7467072261637782204}
   m_Layer: 0
   m_Name: healthPackLight
   m_TagString: Untagged
@@ -208,8 +209,21 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7696273588643896702}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.9, y: 0.45, z: 1.9}
   m_Center: {x: 0, y: 0.23, z: 0}
+--- !u!114 &7467072261637782204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7696273588643896702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9e35b2a78bc41449b0a03c4f40431d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup: {fileID: 8300000, guid: 9a0daea189eb7994a8cb04caffd4582b, type: 3}

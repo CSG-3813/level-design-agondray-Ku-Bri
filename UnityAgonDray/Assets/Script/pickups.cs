@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class pickups : MonoBehaviour
 {
+
+    public AudioClip pickup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,11 @@ public class pickups : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        AudioSource.PlayClipAtPoint(pickup, transform.position);
+        Destroy(gameObject);
     }
 }
