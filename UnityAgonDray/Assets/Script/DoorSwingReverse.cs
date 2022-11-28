@@ -21,7 +21,7 @@ public class DoorSwingReverse : MonoBehaviour
         //Debug.Log(audioClp);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -32,7 +32,7 @@ public class DoorSwingReverse : MonoBehaviour
     }
 
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -42,6 +42,7 @@ public class DoorSwingReverse : MonoBehaviour
         }
     }
 
+   
 
     public void playHinge()
     {
