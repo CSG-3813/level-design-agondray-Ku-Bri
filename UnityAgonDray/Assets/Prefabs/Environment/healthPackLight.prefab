@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 7027155430692833220}
   - component: {fileID: 6208954483203393633}
   - component: {fileID: 8200584868811816107}
+  - component: {fileID: 5239590620671379093}
   m_Layer: 0
   m_Name: healthPackLight
   m_TagString: Untagged
@@ -199,3 +200,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5239590620671379093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7696273588643896702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9, y: 0.45, z: 1.9}
+  m_Center: {x: 0, y: 0.23, z: 0}
