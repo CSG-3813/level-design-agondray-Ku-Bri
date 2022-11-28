@@ -23,7 +23,6 @@ public class ScrollsFall : MonoBehaviour
         if(other.tag == "Player")
         {
             Anim.SetTrigger("Active");
-            gameObject.SetActive(false);
         }
     }
 }
