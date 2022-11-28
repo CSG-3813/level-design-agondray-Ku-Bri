@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorSwingReverse : MonoBehaviour
 {
-
+    public AudioClip MainDoor;
     private Animator doorSwingRev;
     AudioSource audioSrc;
     AudioClip audioClp;
@@ -26,13 +26,18 @@ public class DoorSwingReverse : MonoBehaviour
         if (other.tag == "Player")
         {
             doorSwingRev.SetBool("IsOpen", true);
+            AudioSource.PlayClipAtPoint(MainDoor, transform.position);
         }
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        doorSwingRev.SetBool("IsOpen", false);
+        if (other.tag == "Player")
+        {
+            doorSwingRev.SetBool("IsOpen", false);
+            AudioSource.PlayClipAtPoint(MainDoor, transform.position);
+        }
     }
 
 

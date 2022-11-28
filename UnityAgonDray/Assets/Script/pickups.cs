@@ -21,7 +21,10 @@ public class pickups : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AudioSource.PlayClipAtPoint(pickup, transform.position);
-        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            AudioSource.PlayClipAtPoint(pickup, transform.position);
+            Destroy(gameObject);
+        }
     }
 }

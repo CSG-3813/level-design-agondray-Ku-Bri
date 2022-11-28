@@ -19,9 +19,12 @@ public class WindGust : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider Player)
+    private void OnTriggerEnter(Collider other)
     {
-        AudioSource.PlayClipAtPoint(windGust, transform.position);
-        //Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            AudioSource.PlayClipAtPoint(windGust, transform.position);
+            //Destroy(gameObject);
+        }
     }
 }

@@ -32,7 +32,10 @@ public class DoorSwing : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        doorSwing.SetBool("IsOpen", false);
+        if (other.tag == "Player")
+        {
+            doorSwing.SetBool("IsOpen", false);
+        }
     }
 
 
