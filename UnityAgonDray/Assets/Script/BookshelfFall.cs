@@ -12,12 +12,24 @@ public class BookshelfFall : MonoBehaviour
         Anim = gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    /* Update is called once per frame
     void Update()
     {
+        if(
         if (Input.GetMouseButtonDown(0))
-        {
+       {
             Anim.SetTrigger("Active");
+        }
+    }*/
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            if (Input.GetMouseButton(0))
+            {
+                Anim.SetTrigger("Active");
+            }
         }
     }
 }
