@@ -17,7 +17,7 @@ public class AnimationControllerEnemy : MonoBehaviour
     private NavMeshAgent thisNavMeshAgent;
     private Animator thisAnimator;
 
-    public float runVelocity = 0.1f;
+    public float runVelocity = 0.3f;
     public string animationWalkParameter;
     public string animationSpeedParameter;
     private float maxSpeed; 
