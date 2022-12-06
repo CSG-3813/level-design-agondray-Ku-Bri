@@ -16,7 +16,7 @@ using UnityEngine.AI;
 public class FollowDestination : MonoBehaviour
 {
     private NavMeshAgent ThisAgent;
-    public Transform Destination;
+    [SerializeField] private Transform Destination;
     private void Awake()
     {
         ThisAgent = GetComponent<NavMeshAgent>();
