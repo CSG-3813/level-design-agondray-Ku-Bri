@@ -232,6 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8186213378375645807}
+  - component: {fileID: 6722264910131673926}
   m_Layer: 0
   m_Name: Bip001 Pelvis
   m_TagString: Untagged
@@ -257,6 +258,20 @@ Transform:
   m_Father: {fileID: 8186213378375645765}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6722264910131673926
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186213378376001039}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.29
+  m_Height: 1.01
+  m_Direction: 0
+  m_Center: {x: -0.42, y: 0, z: 0}
 --- !u!1 &8186213378376001041
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8186213378375645703}
+  - component: {fileID: 2073473834819211042}
   m_Layer: 0
   m_Name: Bip001 R Forearm
   m_TagString: Untagged
@@ -643,6 +659,19 @@ Transform:
   m_Father: {fileID: 8186213378375645705}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2073473834819211042
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186213378376001063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.52, y: 0.16, z: 0.13}
+  m_Center: {x: -0.12, y: -0.06, z: 0}
 --- !u!1 &8186213378376001065
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8186213378375645715}
   - component: {fileID: 8186213378372823911}
+  - component: {fileID: 1928205793583246829}
   m_Layer: 0
   m_Name: deb_Goblin01_W
   m_TagString: Untagged
@@ -972,6 +1002,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000000014901161, y: 0.0000018849969, z: 0.30613878}
     m_Extent: {x: 0.089675784, y: 0.089675784, z: 0.47134152}
   m_DirtyAABB: 0
+--- !u!65 &1928205793583246829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186213378376001075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17935452, y: 0.94268376, z: 0.17935218}
+  m_Center: {x: -0.021204136, y: -0.30613694, z: 0.013000864}
 --- !u!1 &8186213378376001077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8186213378375645785}
+  - component: {fileID: 1346842482389925774}
   m_Layer: 0
   m_Name: Bip001 L Forearm
   m_TagString: Untagged
@@ -1672,6 +1716,19 @@ Transform:
   m_Father: {fileID: 8186213378375645795}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1346842482389925774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186213378376001145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.52, y: 0.16, z: 0.13}
+  m_Center: {x: -0.12, y: -0.06, z: 0}
 --- !u!1 &8186213378376001147
 GameObject:
   m_ObjectHideFlags: 0

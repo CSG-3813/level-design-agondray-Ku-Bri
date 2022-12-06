@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    AudioSource aud;
+
 
     public NavMeshAgent navMeshAgent;
     public float startWaitTime = 4;
@@ -39,6 +41,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        aud = GetComponent<AudioSource>();
+
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -71,6 +75,7 @@ public class EnemyController : MonoBehaviour
 
     private void Chasing()
     {
+        aud.Play();
         m_PlayerNear = false;
         playerLastPosition = Vector3.zero;
 
@@ -158,6 +163,8 @@ public class EnemyController : MonoBehaviour
     void CaughtPlayer()
     {
         m_CaughtPlayer = true;
+        Debug.Log("ATTACKING");
+        GetComponent<Animator>().SetTrigger("Attack");
     }
 
     void LookingPlayer(Vector3 player)
@@ -213,4 +220,6 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+
 }
