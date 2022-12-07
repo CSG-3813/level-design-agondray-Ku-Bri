@@ -18,7 +18,7 @@ public class ChaseState : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = 3.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        AudioManager.instance.Play("GoblinHiss");
+        AudioManager.instance.Play("ChaseMusic");
    
     }
 
