@@ -8,7 +8,8 @@ public class ChaseState : StateMachineBehaviour
 
     NavMeshAgent agent;
     Transform player;
-    float chaseRange = 15;
+    float chaseRange = 14;
+    
 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -17,6 +18,7 @@ public class ChaseState : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = 3.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        AudioManager.instance.Play("GoblinHiss");
    
     }
 
