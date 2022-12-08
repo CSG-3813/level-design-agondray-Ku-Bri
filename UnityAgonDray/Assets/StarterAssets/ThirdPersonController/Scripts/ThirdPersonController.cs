@@ -159,7 +159,20 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            //Attack();
         }
+
+        //private void Attack()
+        //{
+        //    if (_input.attack && Grounded && !_input.sprint)
+        //    {
+        //        //play attack animation
+        //    }
+        //    else
+        //    {
+        //        //stop attack animation
+        //    }
+        //}
 
         private void LateUpdate()
         {
