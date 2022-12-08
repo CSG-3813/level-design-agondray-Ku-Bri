@@ -12,6 +12,21 @@ public class PatrolState : StateMachineBehaviour
     Transform player;
     float chaseRange = 8;
 
+    //Animator anim;
+
+   /* public SphereCollider collider;
+    public float FOV = 90f;
+    public LayerMask LineOfSightLayers;
+   */
+    /*public float viewRadius = 15;
+    public float viewAngle = 90;
+    public LayerMask playerMask;
+    public LayerMask obstacleMask;
+    
+    bool m_PlayerInRange;
+    bool m_IsPatrol;
+    Vector3 m_PlayerPosition;
+    */
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -20,6 +35,8 @@ public class PatrolState : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = 2.5f;
         timer = 0;
+        //collider = agent.GetComponent<SphereCollider>();
+        //anim = animator;
         GameObject go = GameObject.FindGameObjectWithTag("Waypoints");
         foreach (Transform t in go.transform)
         {
@@ -42,8 +59,9 @@ public class PatrolState : StateMachineBehaviour
         }
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        if (distance < chaseRange)
+        if (distance < chaseRange /*&& CheckLineOfSight(player)*/)
         {
+            AudioManager.instance.Play("ChaseMusic");
             animator.SetBool("isChasing", true);
         }
     }
@@ -53,6 +71,45 @@ public class PatrolState : StateMachineBehaviour
     {
         agent.SetDestination(agent.transform.position);
     }
+
+
+   /*  void OnTriggerEnter(Collider other)
+     {
+        if (other.tag == "Player")
+        {
+            if (CheckLineOfSight(player))
+            {
+                anim.SetBool("isChasing", true);
+            }
+        }
+     }
+
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            anim.SetBool("isPatrolling", true);
+        }
+    }
+
+     bool CheckLineOfSight(Transform player)
+     {
+         Vector3 Direction = (player.transform.position - agent.transform.position).normalized;
+         if (Vector3.Dot(agent.transform.forward, Direction) >= Mathf.Cos(FOV))
+         {
+             RaycastHit Hit;
+             if (Physics.Raycast(agent.transform.position, Direction, out Hit, collider.radius, LineOfSightLayers))
+             {
+                 if (Hit.transform != null)
+                 {
+                     return true;
+                 }
+             }
+         }
+         return false;
+     }
+   */
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

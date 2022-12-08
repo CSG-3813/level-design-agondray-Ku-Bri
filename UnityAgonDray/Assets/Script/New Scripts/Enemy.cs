@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            //animator.SetTrigger("damage");
+            animator.SetTrigger("damage");
         }
     }
 }
