@@ -11,7 +11,10 @@ public class PatrolState : StateMachineBehaviour
 
     Transform player;
     float chaseRange = 8;
- 
+
+    public LayerMask Player;
+    public GameObject lastHit;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -46,8 +49,24 @@ public class PatrolState : StateMachineBehaviour
         float dot = Vector3.Dot(agent.transform.forward, (player.position - agent.transform.position).normalized);
         if (distance < chaseRange && dot > 0.7f)
         {
-            AudioManager.instance.Play("ChaseMusic");
-            animator.SetBool("isChasing", true);
+            Debug.Log("Player in Range");
+            var ray = new Ray(agent.transform.position, agent.transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                lastHit = hit.transform.gameObject;
+                if (lastHit.CompareTag("Default"))
+                {
+                    Debug.Log("I found something else with name");
+                    animator.SetBool("isChasing", false);
+                }
+            }
+            else if(lastHit.CompareTag("Player"))
+            {
+                Debug.Log("We found Target!");
+                AudioManager.instance.Play("ChaseMusic");
+                animator.SetBool("isChasing", true);
+            }
         }
     }
 
