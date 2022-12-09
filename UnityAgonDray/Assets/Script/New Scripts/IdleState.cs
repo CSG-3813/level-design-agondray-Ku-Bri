@@ -11,21 +11,13 @@ public class IdleState : StateMachineBehaviour
     Transform player;
     float chaseRange = 8;
 
-   // NavMeshAgent agent;
-    //Animator anim;
-/*
-    public SphereCollider collider;
-    public float FOV = 90f;
-    public LayerMask Obstacles;
-    public LayerMask Player;
-*/
+    NavMeshAgent agent;
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer = 0;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //collider = agent.GetComponent<SphereCollider>();
-        //anim = animator;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -38,7 +30,8 @@ public class IdleState : StateMachineBehaviour
         }
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        if(distance < chaseRange)
+        float dot = Vector3.Dot(agent.transform.forward, (player.position - agent.transform.position).normalized);
+        if (distance < chaseRange && dot > 0.7f)
         {
             AudioManager.instance.Play("ChaseMusic");
             animator.SetBool("isChasing", true);
@@ -47,44 +40,6 @@ public class IdleState : StateMachineBehaviour
 
     }
 
-
-  /*  void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            //if (CheckLineOfSight(player))
-            //{
-                anim.SetBool("isChasing", true);
-            //}
-        }
-    }
-
-
-    void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            anim.SetBool("isPatrolling", true);
-        }
-    }
-
-    bool CheckLineOfSight(Transform player)
-    {
-        Vector3 Direction = (player.transform.position - agent.transform.position).normalized;
-        if(Vector3.Dot(agent.transform.forward, Direction) >= Mathf.Cos(FOV))
-        {
-            RaycastHit Hit;
-            if(Physics.Raycast(agent.transform.position, Direction, out Hit, collider.radius, Player))
-            {
-                if(Hit.transform != null)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-  */
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
