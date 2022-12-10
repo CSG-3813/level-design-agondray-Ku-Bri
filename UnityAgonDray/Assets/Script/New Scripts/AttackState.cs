@@ -7,6 +7,10 @@ public class AttackState : StateMachineBehaviour
     Transform player;
     float attackRange = 4f;
 
+    public Transform attackPoint;
+    public float attackHitRange = 1f;
+    public LayerMask playerLayer;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -16,12 +20,29 @@ public class AttackState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.transform.LookAt(player); 
+        animator.transform.LookAt(player);
+        /*Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayer);
+
+        foreach (Collider enemy in hitEnemies)
+        {
+            Debug.Log("We hit " + enemy.name);
+        }
+        */
         float distance = Vector3.Distance(player.position, animator.transform.position);
         if (distance > attackRange)
         {
             animator.SetBool("isAttacking", false);
         }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

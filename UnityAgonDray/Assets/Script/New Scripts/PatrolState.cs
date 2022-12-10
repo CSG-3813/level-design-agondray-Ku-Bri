@@ -55,17 +55,18 @@ public class PatrolState : StateMachineBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 lastHit = hit.transform.gameObject;
-                if (lastHit.CompareTag("Default"))
+                if (lastHit.CompareTag("Player"))
                 {
-                    Debug.Log("I found something else with name");
-                    animator.SetBool("isChasing", false);
+                    Debug.Log("We found Target!");
+                    AudioManager.instance.Play("ChaseMusic");
+                    animator.SetBool("isChasing", true);
                 }
             }
             else if(lastHit.CompareTag("Player"))
             {
-                Debug.Log("We found Target!");
-                AudioManager.instance.Play("ChaseMusic");
-                animator.SetBool("isChasing", true);
+                Debug.Log("I found something else with name");
+                animator.SetBool("isChasing", false);
+                
             }
         }
     }

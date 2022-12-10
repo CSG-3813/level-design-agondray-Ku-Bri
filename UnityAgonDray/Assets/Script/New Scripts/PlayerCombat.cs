@@ -6,6 +6,9 @@ public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
 
+    public Transform attackPoint;
+    public float attackRange = 1f;
+    public LayerMask enemyLayer;
 
     public bool hasStick = false;
     public bool hasSword = false;
@@ -26,5 +29,21 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("attack");
+
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
+
+        foreach(Collider enemy in hitEnemies)
+        {
+            Debug.Log("We hit " + enemy.name);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);      
     }
 }
