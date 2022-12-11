@@ -23,6 +23,8 @@ public class pickups : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            GameManager.gameManager.hasKey = true;
+            Debug.Log(GameManager.gameManager.hasKey);
             AudioSource.PlayClipAtPoint(pickup, transform.position);
             Destroy(gameObject);
         }
