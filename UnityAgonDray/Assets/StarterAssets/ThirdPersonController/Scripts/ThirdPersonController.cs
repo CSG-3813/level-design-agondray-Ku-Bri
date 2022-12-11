@@ -160,6 +160,17 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             //Attack();
+            Debug.Log("MoveSpeed = " + MoveSpeed);
+            Debug.Log("Sprintpeed = " + SprintSpeed);
+            if (GameManager.gameManager.hasStone)
+            {
+                Debug.Log("Player has stone = " + GameManager.gameManager.hasStone);
+                MoveSpeed = 3.5f;
+                Debug.Log("MoveSpeed = " + MoveSpeed);
+                SprintSpeed = 7f;
+                Debug.Log("Sprintpeed = " + SprintSpeed);
+            }
+           
         }
 
         //private void Attack()

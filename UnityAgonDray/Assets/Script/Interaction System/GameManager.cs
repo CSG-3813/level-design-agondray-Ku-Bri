@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] public HealthBar healthBar;
@@ -14,7 +15,9 @@ public class GameManager : MonoBehaviour
     public bool hasKey = false;
     public bool hasStone = false;
 
-    public Sprite sprite;
+    //public Sprite sprite;
+
+   
 
     void Awake()
     {
@@ -30,9 +33,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
+        //gameObject.GetComponent<Renderer>().enabled = false;
         hasKey = false;
         hasStone = false;
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void SetKey(bool val)
