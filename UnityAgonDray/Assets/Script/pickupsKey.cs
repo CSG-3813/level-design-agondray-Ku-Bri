@@ -26,7 +26,7 @@ public class pickupsKey: MonoBehaviour
         {
             GameManager.gameManager.hasKey = true;
             //Debug.Log(GameManager.gameManager.hasKey);
-            
+            onKeyPickup?.Invoke(this, EventArgs.Empty);
             AudioSource.PlayClipAtPoint(pickup, transform.position);
             Destroy(gameObject);
         }
