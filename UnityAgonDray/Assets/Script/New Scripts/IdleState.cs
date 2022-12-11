@@ -31,7 +31,7 @@ public class IdleState : StateMachineBehaviour
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
         float dot = Vector3.Dot(agent.transform.forward, (player.position - agent.transform.position).normalized);
-        if (distance < chaseRange && dot > 0.7f)
+        if (distance < chaseRange && dot > 0.6f)
         {
             AudioManager.instance.Play("ChaseMusic");
             animator.SetBool("isChasing", true);

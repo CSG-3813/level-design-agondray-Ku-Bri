@@ -47,7 +47,7 @@ public class PatrolState : StateMachineBehaviour
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
         float dot = Vector3.Dot(agent.transform.forward, (player.position - agent.transform.position).normalized);
-        if (distance < chaseRange && dot > 0.7f)
+        if (distance < chaseRange && dot > 0.6f)
         {
             Debug.Log("Player in Range");
             var ray = new Ray(agent.transform.position, agent.transform.forward);

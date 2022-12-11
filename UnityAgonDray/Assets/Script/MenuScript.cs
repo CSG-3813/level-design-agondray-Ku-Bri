@@ -26,12 +26,14 @@ public class MenuScript : MonoBehaviour
 
     public void OnGameStart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Game Started");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void OnGameExit()
     {
-        Application.Quit();
+        Debug.Log("Game Ended");
+        //Application.Quit();
     }
 }
 

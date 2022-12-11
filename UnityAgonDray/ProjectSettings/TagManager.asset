@@ -8,6 +8,9 @@ TagManager:
   - Waypoints
   - Enemy
   - Obstacle
+  - heath
+  - key
+  - stone
   layers:
   - Default
   - TransparentFX

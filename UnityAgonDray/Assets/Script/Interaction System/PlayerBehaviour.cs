@@ -15,7 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown("r"))
         {
-            PlayerTakeDamage(15);
+            PlayerTakeDamage(20);
             Debug.Log(GameManager.gameManager.playerHealth.Health);
         }
         if (Input.GetKeyDown("t"))
