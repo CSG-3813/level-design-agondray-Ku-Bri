@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+
+    //[SerializeField] HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +30,12 @@ public class PlayerBehaviour : MonoBehaviour
     private void PlayerTakeDamage(int damage)
     {
         GameManager.gameManager.playerHealth.DmgUnit(damage);
-        
+        GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
     }
 
     private void PlayerHeal(int healing)
     {
         GameManager.gameManager.playerHealth.HealUnit(healing);
+        GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
     }
 }
