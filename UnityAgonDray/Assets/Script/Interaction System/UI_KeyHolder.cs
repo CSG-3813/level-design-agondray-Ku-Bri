@@ -17,7 +17,11 @@ public class UI_KeyHolder : MonoBehaviour
         keyTemplate.gameObject.SetActive(false);
 
     }
-   
+
+    private void Start()
+    {
+            
+    }
 
     private void UpdateVisual()
     {

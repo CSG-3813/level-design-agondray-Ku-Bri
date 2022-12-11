@@ -43,6 +43,11 @@ public class UnitHealth
         {
             currentHealth -= dmgAmount;
         }
+        if(currentHealth <= 0)
+        {
+            GameManager.gameManager.endMsg = GameManager.gameManager.loseMessage;
+            GameManager.gameManager.SetTargetState(GameState.gameEnded); //set the state to Lost Level
+        }
     }
 
     public void HealUnit(int healAmount)
