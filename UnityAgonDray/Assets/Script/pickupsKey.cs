@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class pickupsKey: MonoBehaviour
 {
-
+    public event EventHandler onKeyPickup;
     public AudioClip pickup;
 
     // Start is called before the first frame update
@@ -24,7 +25,8 @@ public class pickupsKey: MonoBehaviour
         if (other.tag == "Player")
         {
             GameManager.gameManager.hasKey = true;
-            Debug.Log(GameManager.gameManager.hasKey);
+            //Debug.Log(GameManager.gameManager.hasKey);
+            
             AudioSource.PlayClipAtPoint(pickup, transform.position);
             Destroy(gameObject);
         }

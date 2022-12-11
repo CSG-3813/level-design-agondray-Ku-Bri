@@ -33,6 +33,10 @@ public class AttackState : StateMachineBehaviour
         {
             animator.SetBool("isAttacking", false);
         }
+        else
+        {
+            animator.SetBool("isAttacking", true);
+        }
     }
 
 

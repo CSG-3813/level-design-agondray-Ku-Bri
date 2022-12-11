@@ -46,29 +46,37 @@ public class PatrolState : StateMachineBehaviour
         }
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        float dot = Vector3.Dot(agent.transform.forward, (player.position - agent.transform.position).normalized);
-        if (distance < chaseRange && dot > 0.6f)
+        //float dot = Vector3.Dot(agent.transform.forward, (player.position - agent.transform.position).normalized);
+        if (distance < chaseRange /*&& dot > 1f*/)
         {
-            Debug.Log("Player in Range");
-            var ray = new Ray(agent.transform.position, agent.transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            AudioManager.instance.Play("ChaseMusic");
+            animator.SetBool("isChasing", true);
+
+        }
+        else
+        {
+            animator.SetBool("isChasing", false);
+        }
+        //Debug.Log("Player in Range");
+        //var ray = new Ray(agent.transform.position, agent.transform.forward);
+        //RaycastHit hit;
+        /*if (Physics.Raycast(ray, out hit))
+        {
+            lastHit = hit.transform.gameObject;
+            if (lastHit.CompareTag("Player"))
             {
-                lastHit = hit.transform.gameObject;
-                if (lastHit.CompareTag("Player"))
-                {
-                    Debug.Log("We found Target!");
-                    AudioManager.instance.Play("ChaseMusic");
-                    animator.SetBool("isChasing", true);
-                }
-            }
-            else if(lastHit.CompareTag("Player"))
-            {
-                Debug.Log("I found something else with name");
-                animator.SetBool("isChasing", false);
-                
+                Debug.Log("We found Target!");
+                AudioManager.instance.Play("ChaseMusic");
+                animator.SetBool("isChasing", true);
             }
         }
+        else if(lastHit.CompareTag("Player"))
+        {
+            //Debug.Log("I found something else with name");
+            animator.SetBool("isChasing", false);
+
+        }
+    }*/
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
