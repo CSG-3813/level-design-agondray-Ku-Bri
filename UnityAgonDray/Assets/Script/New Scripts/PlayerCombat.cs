@@ -4,46 +4,58 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public Animator animator;
 
-    public Transform attackPoint;
-    public float attackRange = 1f;
-    public LayerMask enemyLayer;
+   // public Animator animator;
 
-    public bool hasStick = false;
-    public bool hasSword = false;
+    //public Transform attackPoint;
+    //public float attackRange = 1f;
+    //public LayerMask enemyLayer;
 
-    public int noWeaponDamage = 10;
-    public int stickDamage = 35;
-    public int swordDamage = 50;
+    //public bool hasStick = false;
+    //public bool hasSword = false;
+
+    //public int noWeaponDamage = 10;
+    //public int stickDamage = 35;
+    //public int swordDamage = 50;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Attack();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Attack();
+        //}
     }
 
-    void Attack()
+    //void Attack()
+    //{
+    //    animator.SetTrigger("attack");
+
+    //    Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
+
+    //    foreach(Collider enemy in hitEnemies)
+    //    {
+    //        Debug.Log("We hit " + enemy.name);
+    //    }
+    //}
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        animator.SetTrigger("attack");
-
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
-
-        foreach(Collider enemy in hitEnemies)
+        Debug.Log("Collision detected");
+        if (collision.collider.CompareTag("Enemy"))
         {
-            Debug.Log("We hit " + enemy.name);
+            Debug.Log("Was Hit by " + collision.gameObject);
+            GameManager.gameManager.playerHealth.DmgUnit(20);
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-        {
-            return;
-        }
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);      
-    }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if (attackPoint == null)
+    //    {
+    //        return;
+    //    }
+    //        Gizmos.DrawWireSphere(attackPoint.position, attackRange);      
+    //}
 }
