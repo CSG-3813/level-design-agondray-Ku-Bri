@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class UI_KeyHolder : MonoBehaviour
+public class UI_StoneHolder : MonoBehaviour
 {
 
-   private Transform container;
-   private Transform keyTemplate;
+    private Transform container;
+    private Transform stoneTemplate;
 
 
     private void Awake()
     {
         container = transform.Find("container");
-        keyTemplate = container.Find("keyTemplate");
-        keyTemplate.gameObject.SetActive(false);
+        stoneTemplate = container.Find("stoneTemplate");
+        stoneTemplate.gameObject.SetActive(false);
 
     }
 
     private void Start()
     {
-            
+
     }
 
     private void Update()
     {
-        if (GameManager.gameManager.hasKey)
+        if (GameManager.gameManager.hasStone)
         {
-            keyTemplate.gameObject.SetActive(true);
+            stoneTemplate.gameObject.SetActive(true);
         }
     }
 
@@ -37,8 +37,8 @@ public class UI_KeyHolder : MonoBehaviour
         //{
         //    keyTemplate.gameObject.SetActive(true);
         //}
-        
-        
+
+
     }
 
 
