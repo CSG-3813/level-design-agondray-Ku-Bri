@@ -47,6 +47,8 @@ public class PlayerCombat : MonoBehaviour
         {
             Debug.Log("Was Hit by " + collision.gameObject);
             GameManager.gameManager.playerHealth.DmgUnit(20);
+            GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
+            Debug.Log(GameManager.gameManager.playerHealth.Health);
         }
     }
 

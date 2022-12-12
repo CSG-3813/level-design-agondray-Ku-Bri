@@ -25,21 +25,23 @@ public class UI_StoneHolder : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("In Update");
         if (GameManager.gameManager.hasStone)
         {
+            Debug.Log("Has stone? " + GameManager.gameManager.hasStone);
             stoneTemplate.gameObject.SetActive(true);
         }
     }
 
-    private void UpdateVisual()
-    {
-        //if (GameManager.gameManager.hasKey)
-        //{
-        //    keyTemplate.gameObject.SetActive(true);
-        //}
+    //private void UpdateVisual()
+    //{
+    //    //if (GameManager.gameManager.hasKey)
+    //    //{
+    //    //    keyTemplate.gameObject.SetActive(true);
+    //    //}
 
 
-    }
+    //}
 
 
 }

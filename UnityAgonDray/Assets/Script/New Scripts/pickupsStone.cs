@@ -25,7 +25,7 @@ public class pickupsStone : MonoBehaviour
         if (other.tag == "Player")
         {
             GameManager.gameManager.hasStone = true;
-            //Debug.Log(GameManager.gameManager.hasKey);
+            Debug.Log(GameManager.gameManager.hasStone);
             AudioSource.PlayClipAtPoint(pickup, transform.position);
             Destroy(gameObject);
         }
