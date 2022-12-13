@@ -19,6 +19,7 @@ public class PatrolState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         AudioManager.instance.Stop("ChaseMusic");
+        AudioManager.instance.Play("GoblinHiss");
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = 2.5f;
