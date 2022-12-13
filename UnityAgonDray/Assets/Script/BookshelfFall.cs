@@ -26,7 +26,7 @@ public class BookshelfFall : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Anim.SetTrigger("Active");
             }
