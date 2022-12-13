@@ -16,7 +16,7 @@ public class TrapDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.gameManager.trapTriggers == 3)
+        /*if (GameManager.gameManager.trapTriggers == 3)
         {
             animator.SetBool("buttonPushed", true);
             GameManager.gameManager.timer += Time.deltaTime;
@@ -25,7 +25,7 @@ public class TrapDoor : MonoBehaviour
         {
             animator.SetBool("buttonPushed", false);
             GameManager.gameManager.timer = 0;
-        }
+        }*/
     }
 
     //public void TrapDoor()

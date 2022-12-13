@@ -13,22 +13,22 @@ public class TrapDoorColliderCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.gameManager.timer > 7)
-        {
-            gameObject.SetActive(true);
-            Debug.Log("Triggers active again");
-            GameManager.gameManager.trapTriggers = 0;
-        }
+        //if(GameManager.gameManager.timer > 7)
+        //{
+        //    gameObject.SetActive(true);
+        //    Debug.Log("Triggers active again");
+        //    GameManager.gameManager.trapTriggers = 0;
+        //}
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Trap collision detected.");
-        if (other.CompareTag("Player"))
-        {
-            GameManager.gameManager.trapTriggers++;
-            Debug.Log("trap count is " + GameManager.gameManager.trapTriggers);
-            gameObject.SetActive(false);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("Trap collision detected.");
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        GameManager.gameManager.trapTriggers++;
+    //        Debug.Log("trap count is " + GameManager.gameManager.trapTriggers);
+    //        gameObject.SetActive(false);
+    //    }
+    //}
 }

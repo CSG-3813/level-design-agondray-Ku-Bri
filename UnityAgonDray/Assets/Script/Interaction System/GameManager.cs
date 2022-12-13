@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
 
     public bool winCondition = false;
 
-    public int trapTriggers;
-    public float timer;
+    //public int trapTriggers;
+    //public float timer;
     
 
     [Header("GAME STATES")]
@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
         //gameObject.GetComponent<Renderer>().enabled = false;
         hasKey = false;
         hasStone = false;
-        trapTriggers = 0;
-        timer = 0f;
+        //trapTriggers = 0;
+        //timer = 0f;
 
 
         //if we run play the game from the level instead of start scene (PLAYTESTING ONLY)

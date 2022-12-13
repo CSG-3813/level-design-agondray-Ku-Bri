@@ -12,6 +12,9 @@ TagManager:
   - key
   - stone
   - attackPoint
+  - trigger1
+  - trigger2
+  - trigger3
   layers:
   - Default
   - TransparentFX
