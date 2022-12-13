@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int HP = 100;
-    public Animator animator;
 
-    public void TakeDamage(int damageAmount)
+    private void OnTriggerEnter(Collider other)
     {
-        HP -= damageAmount;
-        if(HP <= 0)
+        Debug.Log("Collision Detected");
+        if (other.CompareTag("Player"))
         {
-            animator.SetTrigger("die");
-        }
-        else
-        {
-            animator.SetTrigger("damage");
+            Debug.Log("Taking Damage");
+            GameManager.gameManager.playerHealth.DmgUnit(20);
+            Debug.Log(GameManager.gameManager.playerHealth);
         }
     }
+    //public int HP = 100;
+    //public Animator animator;
+
+    //public void TakeDamage(int damageAmount)
+    //{
+    //    HP -= damageAmount;
+    //    if(HP <= 0)
+    //    {
+    //        animator.SetTrigger("die");
+    //    }
+    //    else
+    //    {
+    //        animator.SetTrigger("damage");
+    //    }
+    //}
 }

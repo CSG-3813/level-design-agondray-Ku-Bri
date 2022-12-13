@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
-{
+{/*
     public bool noWeapon = true;
     public bool hasStick = false;
     public bool hasSword = false;
@@ -38,6 +38,6 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+
+    }*/
 }

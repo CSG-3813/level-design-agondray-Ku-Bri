@@ -11,6 +11,7 @@ TagManager:
   - heath
   - key
   - stone
+  - attackPoint
   layers:
   - Default
   - TransparentFX

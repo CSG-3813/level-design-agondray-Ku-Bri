@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class TextDisplay: MonoBehaviour
 {
     [Header("Text Boxes")]
-    public TMP_Text mainTextbox; //textbox for the main body
+    public TMP_Text guardRoom; //textbox for exiting the guard room
+    public TMP_Text scroll;
+    public TMP_Text windBookshelf;
+    public TMP_Text doorLocked;
 
     // Start is called before the first frame update
     void Start()
