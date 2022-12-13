@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    private int damage;
+    private int damageWithStone;
 
-   // public Animator animator;
+    // public Animator animator;
 
     //public Transform attackPoint;
     //public float attackRange = 1f;
@@ -17,6 +19,13 @@ public class PlayerCombat : MonoBehaviour
     //public int noWeaponDamage = 10;
     //public int stickDamage = 35;
     //public int swordDamage = 50;
+
+
+    private void Start()
+    {
+        damage = 20;
+        damageWithStone = 10;
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,7 +55,14 @@ public class PlayerCombat : MonoBehaviour
         if (collision.collider.CompareTag("Enemy"))
         {
             Debug.Log("Was Hit by " + collision.gameObject);
-            GameManager.gameManager.playerHealth.DmgUnit(20);
+            if (GameManager.gameManager.hasStone)
+            {
+                GameManager.gameManager.playerHealth.DmgUnit(10);
+            }
+            else
+            {
+                GameManager.gameManager.playerHealth.DmgUnit(20);
+            }
             GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
             Debug.Log(GameManager.gameManager.playerHealth.Health);
         }

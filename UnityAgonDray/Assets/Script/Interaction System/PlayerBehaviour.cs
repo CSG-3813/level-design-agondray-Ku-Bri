@@ -16,16 +16,16 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("r"))
-        {
-            PlayerTakeDamage(20);
-            Debug.Log(GameManager.gameManager.playerHealth.Health);
-        }
-        if (Input.GetKeyDown("t"))
-        {
-            PlayerHeal(15);
-            Debug.Log(GameManager.gameManager.playerHealth.Health);
-        }
+        //if (Input.GetKeyDown("r"))
+        //{
+        //    PlayerTakeDamage(20);
+        //    Debug.Log(GameManager.gameManager.playerHealth.Health);
+        //}
+        //if (Input.GetKeyDown("t"))
+        //{
+        //    PlayerHeal(15);
+        //    Debug.Log(GameManager.gameManager.playerHealth.Health);
+        //}
     }
 
     private void PlayerTakeDamage(int damage)
