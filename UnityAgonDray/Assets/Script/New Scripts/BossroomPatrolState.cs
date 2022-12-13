@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class BossroomPatrolState : StateMachineBehaviour
 {
     float timer;
-    List<Transform> Waypoints_BossRoom = new List<Transform>();
+    List<Transform> waypoints = new List<Transform>();
     NavMeshAgent agent;
 
     Transform player;
@@ -27,9 +27,9 @@ public class BossroomPatrolState : StateMachineBehaviour
         GameObject go = GameObject.FindGameObjectWithTag("Waypoints_BossRoom");
         foreach (Transform t in go.transform)
         {
-            Waypoints_BossRoom.Add(t);
+            waypoints.Add(t);
         }
-        agent.SetDestination(Waypoints_BossRoom[Random.Range(0, Waypoints_BossRoom.Count)].position);
+        agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)].position);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -37,7 +37,7 @@ public class BossroomPatrolState : StateMachineBehaviour
     {
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            agent.SetDestination(Waypoints_BossRoom[Random.Range(0, Waypoints_BossRoom.Count)].position);
+            agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)].position);
         }
         timer += Time.deltaTime;
         if (timer > 10)
