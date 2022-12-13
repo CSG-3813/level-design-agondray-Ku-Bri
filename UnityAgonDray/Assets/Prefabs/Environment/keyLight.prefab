@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6670342022725682050}
   - component: {fileID: 8896060565197961032}
   - component: {fileID: 8455170968792784689}
-  - component: {fileID: 6799592568203084723}
+  - component: {fileID: 5985762390574782841}
   m_Layer: 0
   m_Name: keyLight
   m_TagString: key
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickup: {fileID: 8300000, guid: 9a0daea189eb7994a8cb04caffd4582b, type: 3}
---- !u!65 &6799592568203084723
-BoxCollider:
+--- !u!136 &5985762390574782841
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,9 +109,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.7, y: 0.19, z: 1.7}
-  m_Center: {x: -0.016174225, y: 0.13, z: 0.0105518475}
+  m_Radius: 0.47
+  m_Height: 1.46
+  m_Direction: 2
+  m_Center: {x: -0.016174225, y: 0.007185035, z: -0.24}
 --- !u!1 &8328128117452523631
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +158,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9528302, g: 0.9365769, b: 0.32060635, a: 1}
-  m_Intensity: 4.47
+  m_Intensity: 3.26
   m_Range: 7.409837
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

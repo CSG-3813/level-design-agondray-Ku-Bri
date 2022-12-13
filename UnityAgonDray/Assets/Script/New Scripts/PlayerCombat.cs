@@ -40,10 +40,10 @@ public class PlayerCombat : MonoBehaviour
     //}
 
 
-    /*private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision detected");
-        if (collision.collider.CompareTag("attackPoint"))
+        if (collision.collider.CompareTag("Enemy"))
         {
             Debug.Log("Was Hit by " + collision.gameObject);
             GameManager.gameManager.playerHealth.DmgUnit(20);
@@ -51,7 +51,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log(GameManager.gameManager.playerHealth.Health);
         }
     }
-    */
+    
     //private void OnDrawGizmosSelected()
     //{
     //    if (attackPoint == null)
