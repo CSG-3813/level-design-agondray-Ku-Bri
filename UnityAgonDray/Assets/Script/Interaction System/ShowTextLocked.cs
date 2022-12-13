@@ -8,18 +8,12 @@ public class ShowTextLocked : MonoBehaviour
     public string textValue;
     public TMP_Text textElement;
 
-    private Transform Canvas;
-    private Transform Panel;
+    //public Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
     {
         textElement.text = textValue;
-        textElement.gameObject.SetActive(false);
-
-        Canvas = transform.Find("Canvas");
-        Panel = Canvas.Find("Panel");
-        Panel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,13 +22,13 @@ public class ShowTextLocked : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !GameManager.gameManager.hasKey)
         {
-            Debug.Log("Player entered locked area");
+            Debug.Log("Player entered guard area");
             textElement.gameObject.SetActive(true);
-                Panel.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(true);
         }
     }
 
@@ -43,7 +37,7 @@ public class ShowTextLocked : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             textElement.gameObject.SetActive(false);
-            Panel.gameObject.SetActive(false);
+            canvas.gameObject.SetActive(false);
         }
-    }
+    }*/
 }

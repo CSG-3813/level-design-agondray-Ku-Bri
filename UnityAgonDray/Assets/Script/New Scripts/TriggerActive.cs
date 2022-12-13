@@ -29,10 +29,4 @@ public class TriggerActive : MonoBehaviour
         }
     }
 
-    public void TriggerReset()
-    {
-        Debug.Log("TriggerReset Entered");
-        gameObject.SetActive(true);
-        Debug.Log("Trigger Active");
-    }
 }
