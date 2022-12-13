@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
 
     public bool winCondition = false;
 
-    //public Sprite sprite;
+    public int trapTriggers;
+    public float timer;
+    
 
     [Header("GAME STATES")]
     public GameState currentGameState;
@@ -84,6 +86,9 @@ public class GameManager : MonoBehaviour
         //gameObject.GetComponent<Renderer>().enabled = false;
         hasKey = false;
         hasStone = false;
+        trapTriggers = 0;
+        timer = 0f;
+
 
         //if we run play the game from the level instead of start scene (PLAYTESTING ONLY)
         if (currentSceneName != startScene)
@@ -248,6 +253,7 @@ public class GameManager : MonoBehaviour
     public void LostLevel()
     {
         endMsg = loseMessage;
+        SetTargetState(GameState.gameLevelEnded);
     } //end LostLevel() 
 
 
