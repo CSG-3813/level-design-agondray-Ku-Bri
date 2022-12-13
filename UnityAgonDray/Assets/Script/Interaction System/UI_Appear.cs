@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class UI_Appear : MonoBehaviour
 {
-    GameObject appearObject;
+    GameObject textUI;
 
     private void Awake()
     {
-        appearObject.SetActive(false);
+        textUI.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -20,11 +20,25 @@ public class UI_Appear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.gameManager.hasKey)
+        //if (GameManager.gameManager.hasKey)
+        //{
+        //    textUI.SetActive(true);
+        //}
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            appearObject.SetActive(true);
+            textUI.SetActive(true);
         }
     }
 
-    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            textUI.SetActive(false);
+        }
+    }
 }
