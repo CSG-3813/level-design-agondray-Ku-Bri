@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     //public float timer;
     
 
-    [Header("GAME STATES")]
+   /* [Header("GAME STATES")]
     public GameState currentGameState;
     public GameState targetGameState;
     public GameState lastGameState;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     //test next level
     [SerializeField] //Access to private variables in editor
     private bool levelBeat = false; //test for beating the level
-
+   */
 
 
     void Awake()
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
 
         //store the current scene
-        currentSceneName = SceneManager.GetActiveScene().name;
+        //currentSceneName = SceneManager.GetActiveScene().name;
     }
 
     private void Start()
@@ -91,27 +91,27 @@ public class GameManager : MonoBehaviour
 
 
         //if we run play the game from the level instead of start scene (PLAYTESTING ONLY)
-        if (currentSceneName != startScene)
+       /* if (currentSceneName != startScene)
         {
             SetTargetState(GameState.gameTesting); //set the game state for testing
         }
         else
         {
             SetTargetState(GameState.gameStarted); //set the game state to game start
-        }
+        }*/
     }
 
     private void Update()
     {
-        //If ESC is pressed quit game
-        if (Input.GetKey("escape")) { SetTargetState(GameState.gameExited); }
+        ////If ESC is pressed quit game
+        //if (Input.GetKey("escape")) { SetTargetState(GameState.gameExited); }
 
-        //Game logic run every frame of current state
-        UpdateCurrentState();
+        ////Game logic run every frame of current state
+        //UpdateCurrentState();
     }
 
     //Set the targeted game state
-    public void SetTargetState(GameState gState)
+    /*public void SetTargetState(GameState gState)
     {
         targetGameState = gState;
         if (targetGameState != currentGameState)
@@ -119,15 +119,14 @@ public class GameManager : MonoBehaviour
             lastGameState = currentGameState; //set the last game state to the current state
             UpdateTargetState();//run the target state update
         }
-
     }//end SetTargetState()
-
+    */
     //Record the current game state
-    public GameState GetCurrentState()
+    /*public GameState GetCurrentState()
     {
         return currentGameState;
     }//end GetCurrentState()
-
+    
 
     //Update the target game state 
     public void UpdateTargetState()
@@ -291,7 +290,7 @@ public class GameManager : MonoBehaviour
         if (levelBeat) { levelBeat = false; BeatLevel(); }
 
     }//end RunTest()
-
+    */
 
 
 

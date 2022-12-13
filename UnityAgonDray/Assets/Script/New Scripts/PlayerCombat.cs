@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    private int damage;
-    private int damageWithStone;
+    //private int damage;
+    //private int damageWithStone;
 
     // public Animator animator;
 
@@ -23,8 +23,8 @@ public class PlayerCombat : MonoBehaviour
 
     private void Start()
     {
-        damage = 20;
-        damageWithStone = 10;
+        //damage = 20;
+        //damageWithStone = 10;
     }
 
     // Update is called once per frame
@@ -67,7 +67,29 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log(GameManager.gameManager.playerHealth.Health);
         }
     }
-    
+   
+
+   /* private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision detected");
+        if (other.CompareTag("attackPoint"))
+        {
+            Debug.Log("Was Hit by " + other.gameObject);
+            if (GameManager.gameManager.hasStone)
+            {
+                GameManager.gameManager.playerHealth.DmgUnit(10);
+            }
+            else
+            {
+                GameManager.gameManager.playerHealth.DmgUnit(20);
+            }
+            GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
+            Debug.Log(GameManager.gameManager.playerHealth.Health);
+        }
+    }
+   */
+
+
     //private void OnDrawGizmosSelected()
     //{
     //    if (attackPoint == null)

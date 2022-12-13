@@ -18,9 +18,9 @@ public class TrapDoorPlayerLose : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            GameManager.gameManager.LostLevel();
-        }
+        //if (other.CompareTag("Player"))
+        //{
+            
+        //}
     }
 }

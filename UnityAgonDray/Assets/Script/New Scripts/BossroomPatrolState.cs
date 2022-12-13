@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class BossroomPatrolState : StateMachineBehaviour
 {
     float timer;
+    
+   
     List<Transform> waypoints = new List<Transform>();
     NavMeshAgent agent;
 

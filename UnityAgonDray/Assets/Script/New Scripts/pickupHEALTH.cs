@@ -26,9 +26,9 @@ public class pickupHEALTH : MonoBehaviour
         if (other.tag == "Player")
         {
             GameManager.gameManager.playerHealth.HealUnit(15);
-            //Debug.Log(GameManager.gameManager.playerHealth.Health);
+            Debug.Log(GameManager.gameManager.playerHealth.Health);
             GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
-            //Debug.Log(GameManager.gameManager.playerHealth.Health + " slider moved?");
+            Debug.Log(GameManager.gameManager.playerHealth.Health + " slider moved");
             AudioSource.PlayClipAtPoint(pickup, transform.position);
             Destroy(gameObject);
         }
