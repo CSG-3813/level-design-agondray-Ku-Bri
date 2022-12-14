@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class UI_Dialoge_Collider : MonoBehaviour
 {
-    public GameObject textUI;
+    public GameObject textWIN;
+    public GameObject textLOSE;
     public Canvas canvas;
+
+   
 
     private void Awake()
     {
-        textUI = transform.GetChild(0).gameObject;
+        textWIN = transform.GetChild(6).gameObject;
+        textLOSE = transform.GetChild(7).gameObject;
 
     }
 
@@ -27,7 +31,12 @@ public class UI_Dialoge_Collider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            textUI.SetActive(true);
+            textWIN.SetActive(false);
+            canvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            textWIN.SetActive(true);
             canvas.gameObject.SetActive(true);
         }
     }
@@ -37,7 +46,8 @@ public class UI_Dialoge_Collider : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canvas.gameObject.SetActive(false);
-            textUI.SetActive(false);
+            textWIN.SetActive(false);
+            textLOSE.SetActive(false);
         }
     }
 
