@@ -13,6 +13,7 @@ public class TrapDoorManager : MonoBehaviour
     public GameObject trigger1;
     public GameObject trigger2;
     public GameObject trigger3;
+    public GameObject doorTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class TrapDoorManager : MonoBehaviour
         trigger1 = transform.GetChild(2).gameObject;
         trigger2 = transform.GetChild(3).gameObject;
         trigger3 = transform.GetChild(4).gameObject;
+        doorTrigger.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class TrapDoorManager : MonoBehaviour
         if(triggerCount == 3)
         {
             animator.SetBool("TrapActive", true);
+            doorTrigger.SetActive(true);
         }
     }
 

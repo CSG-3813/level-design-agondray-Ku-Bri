@@ -5,13 +5,26 @@ using UnityEngine.AI;
 
 public class NavMeshDeactivate : MonoBehaviour
 {
+    NavMeshAgent agent;
     TrapDoorManager TDM;
+    private bool inTrigger;
+
+
+    private void Update()
+    {
+        if(inTrigger && TDM.triggerCount == 3)
+        {
+            agent.enabled = false;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger activated " + other.gameObject);
-        if (other.CompareTag("Enemy") && TDM.triggerCount == 0) 
+        if (other.CompareTag("Enemy")) 
         {
-            other.GetComponentInParent<NavMeshAgent>().enabled = false;
+            agent = other.GetComponentInParent<NavMeshAgent>();
+            
+            agent.enabled = false;
             Debug.Log("Trap is open " + other.GetComponentInParent<NavMeshAgent>());
         }
     }
@@ -20,7 +33,8 @@ public class NavMeshDeactivate : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<NavMeshAgent>().enabled = true;
+            inTrigger = false;
+            agent.enabled = true;
         }
     }
 }
