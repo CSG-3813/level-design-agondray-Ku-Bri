@@ -5,6 +5,7 @@ using TMPro;
 
 public class UI_Dialoge_Collider1 : MonoBehaviour
 {
+
     public string textWin;
     public string textLose;
     public Canvas canvas;
@@ -21,7 +22,7 @@ public class UI_Dialoge_Collider1 : MonoBehaviour
 
     private void Start()
     {
-
+        
     }
 
     private void Update()
@@ -35,11 +36,13 @@ public class UI_Dialoge_Collider1 : MonoBehaviour
         {
             txtDisplay.text = textLose;
             canvas.gameObject.SetActive(true);
+            Application.Quit();
         }
         else
         {
             txtDisplay.text = textWin;
             canvas.gameObject.SetActive(true);
+            Application.Quit();
         }
 
     }

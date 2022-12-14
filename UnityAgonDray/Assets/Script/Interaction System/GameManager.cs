@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public bool hasStone = false;
 
     public bool winCondition = false;
+    public bool loseCondition = false;
 
     public string winMessage;
     public string loseMessage;
@@ -54,11 +55,15 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
+        if (winCondition || loseCondition)
+        {
+            Application.Quit();
+        }
     }
     
     public void BeatLevel()
     {
-        endMessage = winMessage;
+        Application.Quit();
        
     }//end BeatLevel()
 
