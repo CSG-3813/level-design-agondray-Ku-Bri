@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UI_Dialoge_Collider : MonoBehaviour
 {
-    public GameObject textUI;
+    public string textValue;
     public Canvas canvas;
+
+    public TMP_Text txtDisplay;
+    
 
    
 
     private void Awake()
     {
-        textUI = transform.GetChild(0).gameObject;
         
     }
 
@@ -29,7 +32,7 @@ public class UI_Dialoge_Collider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            textUI.SetActive(false);
+            txtDisplay.text = textValue;
             canvas.gameObject.SetActive(true);
         }
 
@@ -39,8 +42,9 @@ public class UI_Dialoge_Collider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            txtDisplay.text = "";
             canvas.gameObject.SetActive(false);
-            textUI.SetActive(false);
+            
         }
     }
 

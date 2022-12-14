@@ -12,8 +12,8 @@ public class UI_Dialoge_Collider1 : MonoBehaviour
 
     private void Awake()
     {
-        textWIN = transform.GetChild(0).gameObject;
-        textLOSE = transform.GetChild(1).gameObject;
+        //textWIN = transform.GetChild(0).gameObject;
+        //textLOSE = transform.GetChild(1).gameObject;
 
     }
 
@@ -27,11 +27,11 @@ public class UI_Dialoge_Collider1 : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            textLOSE.SetActive(false);
+            textLOSE.SetActive(true);
             canvas.gameObject.SetActive(true);
         }
         else
