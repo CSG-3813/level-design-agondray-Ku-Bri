@@ -21,12 +21,12 @@ public class ChangeTag: MonoBehaviour
         gameObject.tag = "Untagged";
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("EndGameCollisionCheck"))
-        {
-            animator.SetBool("inPit", true);
-            Application.Quit();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("EndGameCollisionCheck"))
+    //    {
+    //        animator.SetBool("inPit", true);
+    //        Application.Quit();
+    //    }
+    //}
 }

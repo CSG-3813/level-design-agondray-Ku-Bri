@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(SphereCollider))]
 public class BossIdleState : StateMachineBehaviour
 {
+
     float timer;
     Transform player;
-    float chaseRange = 10;
+    float chaseRange = 15;
 
-   // NavMeshAgent agent;
+    NavMeshAgent agent;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -21,21 +24,22 @@ public class BossIdleState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer += Time.deltaTime;
-        if (timer > 15)
+        if (timer > 2)
         {
-            AudioManager.instance.Play("BossRoar");
+            animator.SetBool("isPatrolling", true);
         }
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
         //float dot = Vector3.Dot(agent.transform.forward, (player.position - agent.transform.position).normalized);
         if (distance < chaseRange /*&& dot > 1f*/)
         {
-            
+            AudioManager.instance.Play("ChaseMusic");
             animator.SetBool("isChasing", true);
         }
 
 
     }
+
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
