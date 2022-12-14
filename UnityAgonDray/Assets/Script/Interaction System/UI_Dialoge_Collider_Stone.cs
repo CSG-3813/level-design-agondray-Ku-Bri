@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UI_Dialoge_Collider_Stone : MonoBehaviour
 {
-    public GameObject textUI;
+    public string textValue;
     public Canvas canvas;
+
+    public TMP_Text txtDisplay;
+
+
+
 
     private void Awake()
     {
-        textUI = transform.GetChild(0).gameObject;
 
     }
 
@@ -27,17 +32,19 @@ public class UI_Dialoge_Collider_Stone : MonoBehaviour
     {
         if (other.CompareTag("Player") && GameManager.gameManager.hasStone)
         {
-            textUI.SetActive(true);
+            txtDisplay.text = textValue;
             canvas.gameObject.SetActive(true);
         }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            textUI.SetActive(false);
+            txtDisplay.text = "";
             canvas.gameObject.SetActive(false);
+
         }
     }
 

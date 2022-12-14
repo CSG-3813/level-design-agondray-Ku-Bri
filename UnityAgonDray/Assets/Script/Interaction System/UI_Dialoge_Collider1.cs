@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UI_Dialoge_Collider1 : MonoBehaviour
 {
-    public GameObject textWIN;
-    public GameObject textLOSE;
+    public string textWin;
+    public string textLose;
     public Canvas canvas;
 
-   
+    public TMP_Text txtDisplay;
+
+
+
 
     private void Awake()
     {
-        //textWIN = transform.GetChild(0).gameObject;
-        //textLOSE = transform.GetChild(1).gameObject;
 
     }
 
@@ -24,21 +26,22 @@ public class UI_Dialoge_Collider1 : MonoBehaviour
 
     private void Update()
     {
-       
+
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            textLOSE.SetActive(true);
+            txtDisplay.text = textLose;
             canvas.gameObject.SetActive(true);
         }
         else
         {
-            textWIN.SetActive(true);
+            txtDisplay.text = textWin;
             canvas.gameObject.SetActive(true);
         }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -46,8 +49,6 @@ public class UI_Dialoge_Collider1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canvas.gameObject.SetActive(false);
-            textWIN.SetActive(false);
-            textLOSE.SetActive(false);
         }
     }
 
