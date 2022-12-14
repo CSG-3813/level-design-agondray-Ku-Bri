@@ -52,11 +52,11 @@ public class PlayerCombat : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision detected");
+        //Debug.Log("Collision detected");
         if (collision.collider.CompareTag("Enemy"))
         {
             AudioManager.instance.Play("Whack");
-            Debug.Log("Was Hit by " + collision.gameObject);
+            //Debug.Log("Was Hit by " + collision.gameObject);
             if (GameManager.gameManager.hasStone)
             {
                 GameManager.gameManager.playerHealth.DmgUnit(10);
@@ -66,30 +66,20 @@ public class PlayerCombat : MonoBehaviour
                 GameManager.gameManager.playerHealth.DmgUnit(20);
             }
             GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
-            Debug.Log(GameManager.gameManager.playerHealth.Health);
+            //Debug.Log(GameManager.gameManager.playerHealth.Health);
         }
     }
    
 
-   /* private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected");
-        if (other.CompareTag("attackPoint"))
+        if (other.CompareTag("EndGameCollisionCheck"))
         {
-            Debug.Log("Was Hit by " + other.gameObject);
-            if (GameManager.gameManager.hasStone)
-            {
-                GameManager.gameManager.playerHealth.DmgUnit(10);
-            }
-            else
-            {
-                GameManager.gameManager.playerHealth.DmgUnit(20);
-            }
-            GameManager.gameManager.healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
-            Debug.Log(GameManager.gameManager.playerHealth.Health);
+            //play defeat animation
+            Application.Quit();
         }
     }
-   */
+  
 
 
     //private void OnDrawGizmosSelected()
