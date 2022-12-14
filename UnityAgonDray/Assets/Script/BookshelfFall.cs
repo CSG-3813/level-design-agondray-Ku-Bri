@@ -5,13 +5,15 @@ using UnityEngine;
 public class BookshelfFall : MonoBehaviour
 {
     Animator Anim;
-    private GameObject textUI;
+    Collider col;
+    private bool ePressed;
 
     // Start is called before the first frame update
     void Start()
     {
         Anim = gameObject.GetComponent<Animator>();
-        textUI = transform.GetChild(0).gameObject;
+        col = gameObject.GetComponent<Collider>();
+        ePressed = false;
 }
 
     /* Update is called once per frame
@@ -31,9 +33,21 @@ public class BookshelfFall : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Anim.SetTrigger("Active");
-                Destroy(textUI);
-                gameObject.GetComponent<UI_Dialoge_Collider>().enabled = false;
+                ePressed = true;
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && ePressed)
+        {
+            disableCollider();
+        }
+        
+    }
+    private void disableCollider()
+    {
+        col.enabled = !col.enabled;
     }
 }
