@@ -36,8 +36,8 @@ public class UI_Dialoge_Collider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            textUI.SetActive(false);
             canvas.gameObject.SetActive(false);
+            textUI.SetActive(false);
         }
     }
 
