@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TrapDoorPlayerLose : MonoBehaviour
 {
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,9 +19,9 @@ public class TrapDoorPlayerLose : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("Player"))
-        //{
-            
-        //}
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
