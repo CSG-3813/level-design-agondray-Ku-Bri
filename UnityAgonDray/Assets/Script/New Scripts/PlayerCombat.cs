@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+   
     //private int damage;
     //private int damageWithStone;
 
@@ -54,6 +55,7 @@ public class PlayerCombat : MonoBehaviour
         Debug.Log("Collision detected");
         if (collision.collider.CompareTag("Enemy"))
         {
+            AudioManager.instance.Play("Whack");
             Debug.Log("Was Hit by " + collision.gameObject);
             if (GameManager.gameManager.hasStone)
             {
