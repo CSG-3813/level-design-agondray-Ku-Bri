@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour
     public bool winCondition = false;
     public bool loseCondition = false;
 
-    public string winMessage;
-    public string loseMessage;
-    public string endMessage;
+    //public string winMessage;
+    //public string loseMessage;
+    //public string endMessage;
 
     void Awake()
     {
@@ -44,9 +44,9 @@ public class GameManager : MonoBehaviour
         hasKey = false;
         hasStone = false;
 
-        winMessage = "You made it out alive!";
-        loseMessage = "You didn't quite make it...";
-        endMessage = null;
+        //winMessage = "You made it out alive!";
+        //loseMessage = "You didn't quite make it...";
+        //endMessage = null;
     }
 
     private void Update()
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void LostLevel()
     {
-        endMessage = loseMessage;
+        //endMessage = loseMessage;
         
     } //end LostLevel() 
 

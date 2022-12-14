@@ -38,7 +38,7 @@ public class UI_Dialoge_Collider1 : MonoBehaviour
             canvas.gameObject.SetActive(true);
             Application.Quit();
         }
-        else
+        if( other.CompareTag("Enemy"))
         {
             txtDisplay.text = textWin;
             canvas.gameObject.SetActive(true);
