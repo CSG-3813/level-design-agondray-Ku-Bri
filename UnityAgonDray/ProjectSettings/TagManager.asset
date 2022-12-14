@@ -15,6 +15,8 @@ TagManager:
   - trigger1
   - trigger2
   - trigger3
+  - WaypointsBoss
+  - WaypointsSecondary
   layers:
   - Default
   - TransparentFX

@@ -39,8 +39,8 @@ public class DoorAnimationAndSound : MonoBehaviour
         anim.enabled = false;
     }
 
-    public void playHinge()
-    {
-        sound.Play();
-    }
+    //public void playHinge()
+    //{
+    //    sound.Play();
+    //}
 }
